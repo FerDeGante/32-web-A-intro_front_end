@@ -1,4 +1,5 @@
 const http = require('http');
+const port = 5500;
 const { type } = require('os');
 
 const server = http.createServer((req, res) => {
@@ -14,6 +15,6 @@ const server = http.createServer((req, res) => {
     res.end(); 
 });
 
-server.listen(5500);
+server.listen(port);
 
-console.log('Servidor JOYA en el puerto:', 5500);
+console.log('Servidor JOYA en el puerto:', port);
