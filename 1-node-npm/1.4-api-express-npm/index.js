@@ -2,21 +2,14 @@ const express = require ('express');
 const colors = require('colors');
 const app = express();
 const port = 3000;
-
-// songs
-const songs = [
-    { id: 1, name: 'Kilometros', artist: 'Caligaris', year: 2007 },
-    { id: 2, name: 'Umbrella', artist: 'Rihanna', year: 2000 },
-    { id: 3, name: 'Back in black', artist: 'AC/DC', year: 1980 },
-    { id: 4, name: 'Gasolina', artist: 'Daddy Yankee', year: 2002 },
-];
+const data = require('./data/songs.js');
 
 app.get('/', (req, res) => {
     res.send('<html> <body> Hola desde node y express cambios </body> </html> ');
     });
 
 app.get('/songs', (req, res) => {
-    res.json(songs);
+    res.json(data.songs);
 });
 
 app.listen(port, () => {
